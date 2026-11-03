@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof. Krushnkumar Soneji | Mathematics Faculty</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- MathJax Configuration & Script -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        academic: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            accent: '#4f46e5', // Indigo
+                            light: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbar for an elegant touch */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        
+        .hero-pattern {
+            background-color: #0f172a;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-academic-light text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Sticky Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-serif font-bold text-xl md:text-2xl text-academic-900 tracking-tight">
+                        <span class="text-academic-accent">K.K.</span> Sir
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-slate-600 hover:text-academic-accent font-medium transition-colors px-3 py-2 rounded-md">About</a>
+                    <a href="#resources" class="text-slate-600 hover:text-academic-accent font-medium transition-colors px-3 py-2 rounded-md">Study Resources</a>
+                    <a href="#playground" class="text-slate-600 hover:text-academic-accent font-medium transition-colors px-3 py-2 rounded-md">Math Playground</a>
+                    <a href="#contact" class="bg-academic-accent text-white hover:bg-indigo-700 font-medium transition-colors px-4 py-2 rounded-md shadow-sm">Contact</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-academic-900 focus:outline-none p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-academic-accent hover:bg-slate-50 rounded-md">About</a>
+                <a href="#resources" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-academic-accent hover:bg-slate-50 rounded-md">Study Resources</a>
+                <a href="#playground" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-academic-accent hover:bg-slate-50 rounded-md">Math Playground</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-academic-accent hover:bg-slate-50 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-pattern text-white pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center md:text-left flex flex-col md:flex-row items-center">
+            <div class="md:w-2/3 space-y-6">
+                <p class="text-indigo-400 font-semibold tracking-wide uppercase text-sm md:text-base">Mathematics Faculty</p>
+                <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                    Prof. Krushnkumar Soneji
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 max-w-2xl font-light leading-relaxed">
+                    Empowering students to master mathematics for NCERT, JEE Mains, and GUJCET through analytical rigor and conceptual clarity.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
+                    <a href="#resources" class="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-academic-accent hover:bg-indigo-700 transition-all shadow-lg hover:shadow-indigo-500/30">
+                        Explore Resources
+                    </a>
+                    <a href="#about" class="inline-flex justify-center items-center px-6 py-3 border border-slate-600 text-base font-medium rounded-md text-slate-200 hover:bg-slate-800 transition-all">
+                        Read My Bio
+                    </a>
+                </div>
+            </div>
+            <!-- Decorative Math Elements -->
+            <div class="hidden md:flex md:w-1/3 justify-center items-center opacity-70">
+                <div class="text-4xl text-slate-400 font-serif leading-loose">
+                    $\int_{a}^{b} f(x)dx$<br>
+                    $e^{i\pi} + 1 = 0$<br>
+                    $\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-academic-900 mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-academic-accent mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/3">
+                    <div class="relative w-64 h-64 mx-auto lg:mx-0 lg:w-full lg:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform transition duration-500 hover:scale-[1.02]">
+                        <!-- Placeholder for Profile Picture -->
+                        <img src="https://placehold.co/600x800/1e293b/ffffff?text=K.K.+Sir" alt="Prof. Krushnkumar Soneji" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-2xl"></div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-2/3 space-y-6 text-slate-600 text-lg leading-relaxed">
+                    <p>
+                        Currently serving as Mathematics Faculty at <strong class="text-academic-900 font-semibold">Gyanmanjari Career Institute</strong>, I specialize in crafting comprehensive academic strategies for Class 11 and 12 students. My primary focus is bridging the gap between foundational NCERT concepts and the high-level analytical thinking required for competitive exams like <strong class="text-academic-accent">JEE Mains</strong> and <strong class="text-academic-accent">GUJCET</strong>.
+                    </p>
+                    <p>
+                        My academic journey includes a Master of Science (M.Sc.) degree, providing me with a rigorous analytical framework. I have formally certified my pedagogical expertise by completing the preparation for the TAT-HS and TAT-S teacher aptitude exams. Prior to my current role, I honed my teaching methodologies at <strong class="text-academic-900">A Model School</strong>, where I developed a passion for student-centric education.
+                    </p>
+                    
+                    <!-- Stats/Highlights Grid -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6">
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 text-center">
+                            <i class="fas fa-graduation-cap text-2xl text-academic-accent mb-2"></i>
+                            <h4 class="font-bold text-academic-900">M.Sc.</h4>
+                            <p class="text-sm text-slate-500">Postgraduate</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 text-center">
+                            <i class="fas fa-certificate text-2xl text-academic-accent mb-2"></i>
+                            <h4 class="font-bold text-academic-900">TAT</h4>
+                            <p class="text-sm text-slate-500">HS & S Certified</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 text-center">
+                            <i class="fas fa-chalkboard-teacher text-2xl text-academic-accent mb-2"></i>
+                            <h4 class="font-bold text-academic-900">JEE/GUJCET</h4>
+                            <p class="text-sm text-slate-500">Specialist</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 text-center">
+                            <i class="fas fa-code text-2xl text-academic-accent mb-2"></i>
+                            <h4 class="font-bold text-academic-900">Python</h4>
+                            <p class="text-sm text-slate-500">Ed-Tech Dev</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Resources Section -->
+    <section id="resources" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-academic-900 mb-4">Study Resources</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Access customized Daily Practice Problems (DPPs), mock test papers, and formula sheets designed specifically for Class 11/12 and competitive exams.</p>
+                <div class="w-20 h-1 bg-academic-accent mx-auto rounded-full mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="h-2 bg-indigo-500"></div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-file-pdf text-xl text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-academic-900 mb-2">JEE Mains DPP</h3>
+                        <p class="text-slate-600 text-sm mb-4">Calculus and Algebra daily practice problems with varying difficulty levels.</p>
+                        <a href="#" class="text-academic-accent font-medium text-sm hover:underline flex items-center">
+                            Download PDF <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="h-2 bg-emerald-500"></div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-tasks text-xl text-emerald-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-academic-900 mb-2">GUJCET Mock Test</h3>
+                        <p class="text-slate-600 text-sm mb-4">Full-length mathematics mock exam following the latest state board pattern.</p>
+                        <a href="#" class="text-emerald-600 font-medium text-sm hover:underline flex items-center">
+                            Download PDF <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="h-2 bg-amber-500"></div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-square-root-variable text-xl text-amber-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-academic-900 mb-2">Master Formula Sheet</h3>
+                        <p class="text-slate-600 text-sm mb-4">Comprehensive quick-revision notes covering 2D/3D Geometry and Vectors.</p>
+                        <a href="#" class="text-amber-600 font-medium text-sm hover:underline flex items-center">
+                            Download PDF <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Math Playground Section -->
+    <section id="playground" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-academic-900 mb-4">Math Playground</h2>
+                <p class="text-slate-600 mb-6">Experience dynamic problem generation. This simulates how Python scripts automate unique worksheets.</p>
+                <div class="w-20 h-1 bg-academic-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="bg-academic-900 rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+                <!-- Control Panel -->
+                <div class="bg-academic-800 p-8 md:w-1/3 flex flex-col justify-center border-b md:border-b-0 md:border-r border-slate-700">
+                    <h3 class="text-white text-xl font-bold mb-4"><i class="fas fa-cogs mr-2 text-academic-accent"></i> Problem Generator</h3>
+                    <p class="text-slate-400 text-sm mb-6">Click below to generate a new, unique Calculus problem using simulated programmatic logic.</p>
+                    <button id="generate-btn" class="w-full bg-academic-accent hover:bg-indigo-500 text-white font-medium py-3 px-4 rounded-lg transition-colors flex justify-center items-center">
+                        <i class="fas fa-sync-alt mr-2"></i> Generate Problem
+                    </button>
+                </div>
+                
+                <!-- Display Area -->
+                <div class="p-8 md:w-2/3 flex flex-col justify-center items-center min-h-[300px] bg-slate-900 relative">
+                    <div class="absolute top-4 right-4 bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded border border-slate-700">Powered by MathJax</div>
+                    
+                    <div class="text-center w-full">
+                        <p class="text-slate-400 mb-4 text-sm uppercase tracking-widest font-semibold">Evaluate the Integral:</p>
+                        
+                        <!-- MathJax target container -->
+                        <div id="math-display" class="text-white text-2xl md:text-4xl font-serif py-6 transition-opacity duration-300">
+                            $$ \int_{0}^{2} (3x^2 + 4x - 5) \,dx $$
+                        </div>
+                        
+                        <div id="solution-display" class="hidden mt-6 pt-6 border-t border-slate-700 text-emerald-400 text-xl font-serif">
+                            <!-- Solution will appear here -->
+                        </div>
+                        
+                        <button id="show-solution-btn" class="mt-6 text-sm text-slate-400 hover:text-white transition-colors border border-slate-600 rounded px-4 py-1">
+                            Show Solution
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-academic-900 text-white pt-16 pb-8 border-t-4 border-academic-accent mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div>
+                    <a href="#" class="font-serif font-bold text-2xl tracking-tight mb-4 inline-block">
+                        <span class="text-academic-accent">K.K.</span> Sir
+                    </a>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-xs">
+                        Dedicated to conceptual clarity and exam success for Class 11/12 Science stream students.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-slate-700 pb-2 inline-block">Institute</h4>
+                    <p class="text-slate-300 flex items-start mb-2">
+                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-academic-accent"></i>
+                        Gyanmanjari Career Institute<br>
+                        (Mathematics Department)
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-slate-700 pb-2 inline-block">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-academic-accent hover:text-white transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-academic-accent hover:text-white transition-all">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-academic-accent hover:text-white transition-all">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-slate-500 text-sm pt-8 border-t border-slate-800">
+                &copy; <span id="year"></span> Prof. Krushnkumar Soneji. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-sm');
+            } else {
+                nav.classList.add('shadow-sm');
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        // Math Playground Logic
+        const generateBtn = document.getElementById('generate-btn');
+        const mathDisplay = document.getElementById('math-display');
+        const solutionDisplay = document.getElementById('solution-display');
+        const showSolutionBtn = document.getElementById('show-solution-btn');
+        
+        let currentSolution = "";
+
+        // Function to generate a random definite integral problem
+        function generateProblem() {
+            // Random coefficients
+            const a = Math.floor(Math.random() * 5) + 1; // 1 to 5
+            const b = Math.floor(Math.random() * 7) - 3; // -3 to 3
+            const c = Math.floor(Math.random() * 10) - 5; // -5 to 4
+            
+            // Random limits
+            const lowerLimit = Math.floor(Math.random() * 2); // 0 or 1
+            const upperLimit = lowerLimit + Math.floor(Math.random() * 3) + 1; // 1 to 4
+            
+            // Format terms to handle negative signs properly
+            const term2 = b === 0 ? "" : (b > 0 ? `+ ${b}x` : `- ${Math.abs(b)}x`);
+            const term3 = c === 0 ? "" : (c > 0 ? `+ ${c}` : `- ${Math.abs(c)}`);
+            
+            // Generate LaTeX string
+            const latexStr = `$$ \\int_{${lowerLimit}}^{${upperLimit}} (${a}x^2 ${term2} ${term3}) \\,dx $$`;
+            
+            // Calculate solution manually for the demo
+            // Integral of ax^2 + bx + c is (a/3)x^3 + (b/2)x^2 + cx
+            const evalAtLimit = (x) => (a/3)*Math.pow(x, 3) + (b/2)*Math.pow(x, 2) + c*x;
+            const result = evalAtLimit(upperLimit) - evalAtLimit(lowerLimit);
+            
+            // Format solution for display (rounding to 2 decimals if needed)
+            const formattedResult = Number.isInteger(result) ? result : result.toFixed(2);
+            currentSolution = `$$ = ${formattedResult} $$`;
+
+            return latexStr;
+        }
+
+        // Handle Generation Button Click
+        generateBtn.addEventListener('click', () => {
+            // Add fade out effect
+            mathDisplay.style.opacity = 0;
+            solutionDisplay.classList.add('hidden');
+            showSolutionBtn.style.display = 'inline-block';
+            
+            // Wait for fade out, then update and render
+            setTimeout(() => {
+                const newProblem = generateProblem();
+                mathDisplay.innerHTML = newProblem;
+                solutionDisplay.innerHTML = currentSolution;
+                
+                // Tell MathJax to re-render the specific elements
+                if (window.MathJax) {
+                    MathJax.typesetPromise([mathDisplay, solutionDisplay]).then(() => {
+                        // Fade back in after rendering is complete
+                        mathDisplay.style.opacity = 1;
+                    });
+                } else {
+                    mathDisplay.style.opacity = 1;
+                }
+            }, 300);
+        });
+
+        // Handle Show Solution Button Click
+        showSolutionBtn.addEventListener('click', () => {
+            solutionDisplay.classList.remove('hidden');
+            showSolutionBtn.style.display = 'none';
+        });
+
+    </script>
+</body>
+</html>
